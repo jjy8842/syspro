@@ -3,24 +3,23 @@
 #include "copy.h"
 
 char line[MAXLINE];
-char swap[MAXLINE];
 char str[5][MAXLINE];
+char swap[MAXLINE];
 
-int main()
+int main(void)
 {
         for(int i=0; i<5; i++)
         {
-                if (fgets(line, MAXLINE, stdin) != NULL)
-                {
-                        copy(str[i], line);
-                }
+         	fgets(line, MAXLINE, stdin);
+         	line[strcspn(line, "\n")] = '\0';
+		copy(line, str[i]);
         }
 
         for(int i=0; i<5; i++)
         {
                 for(int j=i+1; j<5; j++)
                 {
-                        if(strlen(str[i]) < strlen(str[j]))
+                	if(strlen(str[i]) < strlen(str[j]))
                         {
                                 copy(swap, str[i]);
                                 copy(str[i], str[j]);
@@ -28,9 +27,11 @@ int main()
                         }
                 }
         }
-        for(int i=0; i<5; i++)
+        
+	for(int i=0; i<5; i++)
         {
-                printf("%s", str[i]);
+                printf("%s\n", str[i]);
         }
+
         return 0;
 }
