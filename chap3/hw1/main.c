@@ -10,7 +10,8 @@ main()
 	int max;
 	max = 0;
 
-	while
-
+	for(int i=0;i<=5;i++)
+	{
+		len = strlen(line);
 	}
 }
