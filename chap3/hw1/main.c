@@ -21,9 +21,9 @@ int main(void)
                 {
                 	if(strlen(str[i]) < strlen(str[j]))
                         {
-                                copy(swap, str[i]);
-                                copy(str[i], str[j]);
-                                copy(str[j], swap);
+                                copy(str[i], swap);
+                                copy(str[j], str[i]);
+                                copy(swap, str[j]);
                         }
                 }
         }
