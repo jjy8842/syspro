@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 		if (lockf(fd, F_LOCK, sizeof(record)) == -1) 
 		{ 
-			perror(argv[1]);
+			perror("-1");
 			exit(3);
 		}
 
